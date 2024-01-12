@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormLayoutDemoComponent } from './formlayoutdemo.component';
 import { FormLayoutDemoRoutingModule } from './formlayoutdemo-routing.module';
 import { AutoCompleteModule } from "primeng/autocomplete";
@@ -28,7 +28,8 @@ import { InputTextModule } from "primeng/inputtext";
 		CascadeSelectModule,
 		MultiSelectModule,
 		InputTextareaModule,
-		InputTextModule
+		InputTextModule,
+		ReactiveFormsModule
 	],
 	declarations: [FormLayoutDemoComponent]
 })

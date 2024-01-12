@@ -1,107 +1,143 @@
-<div class="grid">
-	<div class="col-12 md:col-6">
-		<div class="card p-fluid">
-			<h5>Vertical</h5>
-			<div class="field">
-				<label htmlFor="name1">Name</label>
-				<input pInputText id="name1" type="text" />
-			</div>
-			<div class="field">
-				<label htmlFor="email1">Email</label>
-				<input pInputText id="email1" type="text" />
-			</div>
-			<div class="field">
-				<label htmlFor="age1">Age</label>
-				<input pInputText id="age1" type="text" />
-			</div>
-		</div>
-		
-		<div class="card p-fluid">
-			<h5>Vertical Grid</h5>
-			<div class="p-formgrid grid">
-				<div class="field col">
-					<label htmlFor="name2">Name</label>
-					<input pInputText id="name2" type="text" />
-				</div>
-				<div class="field col">
-					<label htmlFor="email2">Email</label>
-					<input pInputText id="email2" type="text" />
-				</div>
-			</div>
-		</div>
-	</div>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="grid">
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h5>Datos del Producto</h5>
 
-	<div class="col-12 md:col-6">
-		<div class="card p-fluid">
-			<h5>Horizontal</h5>
-			<div class="field grid">
-				<label htmlFor="name3" class="col-12 mb-2 md:col-2 md:mb-0">Name</label>
-				<div class="col-12 md:col-10">
-					<input pInputText id="name3" type="text" />
-				</div>
-			</div>
-			<div class="field grid">
-				<label htmlFor="email3" class="col-12 mb-2 md:col-2 md:mb-0">Email</label>
-				<div class="col-12 md:col-10">
-					<input pInputText id="email3" type="text" />
-				</div>
-			</div>
-		</div>
+            <div class="field">
+                <label for="nombre">Nombre</label>
+                <input
+                    pInputText
+                    id="nombre"
+                    type="text"
+                    formControlName="nombre"
+                />
+            </div>
 
-		<div class="card">
-			<h5>Inline</h5>
-			<div class="formgroup-inline">
-				<div class="field">
-					<label htmlFor="firstname1" class="p-sr-only">Firstname</label>
-					<input pInputText id="firstname1" type="text" placeholder="Firstname" />
-				</div>
-				<div class="field">
-					<label htmlFor="lastname1" class="p-sr-only">Lastname</label>
-					<input pInputText id="lastname1" type="text" placeholder="Lastname" />
-				</div>
-				<button pButton label="Submit"></button>
-			</div>
-		</div>
+            <div class="field">
+                <label for="descripcion">Descripción</label>
+                <input
+                    pInputText
+                    id="descripcion"
+                    type="text"
+                    formControlName="descripcion"
+                />
+            </div>
 
-		<div class="card">
-			<h5>Help Text</h5>
-			<div class="field p-fluid">
-				<label htmlFor="username">Username</label>
-				<input pInputText id="username" type="text" />
-				<small>Enter your username to reset your password.</small>
-			</div>
-		</div>
-	</div>
+            <div class="field">
+                <label for="precio">Precio</label>
+                <input
+                    pInputText
+                    id="precio"
+                    type="number"
+                    formControlName="precio"
+                />
+            </div>
 
-	<div class="col-12">
-		<div class="card">
-			<h5>Advanced</h5>
-			<div class="p-fluid p-formgrid grid">
-				<div class="field col-12 md:col-6">
-					<label htmlFor="firstname2">Firstname</label>
-					<input pInputText id="firstname2" type="text" />
-				</div>
-				<div class="field col-12 md:col-6">
-					<label htmlFor="lastname2">Lastname</label>
-					<input pInputText id="lastname2" type="text" />
-				</div>
-				<div class="field col-12">
-					<label htmlFor="address">Address</label>
-					<input pInputTextarea id="address" rows="4" />
-				</div>
-				<div class="field col-12 md:col-6">
-					<label htmlFor="city">City</label>
-					<input pInputText id="city" type="text" />
-				</div>
-				<div class="field col-12 md:col-3">
-					<label htmlFor="state">State</label>
-					<p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState"></p-dropdown>
-				</div>
-				<div class="field col-12 md:col-3">
-					<label htmlFor="zip">Zip</label>
-					<input pInputText id="zip" type="text" />
-				</div>
+            <div class="field">
+                <label for="stock">Stock</label>
+                <input
+                    pInputText
+                    id="stock"
+                    type="number"
+                    formControlName="stock"
+                />
+            </div>
+
+            <div class="field">
+                <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                <input
+                    pInputText
+                    id="fechaVencimiento"
+                    type="text"
+                    formControlName="fechaVencimiento"
+                />
+            </div>
+
+            <div class="field">
+                <label for="registroSanitario">Registro Sanitario</label>
+                <input
+                    pInputText
+                    id="registroSanitario"
+                    type="text"
+                    formControlName="registroSanitario"
+                />
+            </div>
+
+            <div class="field" style="margin-bottom: 20px">
+                <label
+                    for="imagenes"
+                    style="
+                        display: block;
+                        margin-bottom: 8px;
+                        font-size: 16px;
+                        color: #333;
+                    "
+                    >Subir Imágenes</label
+                >
+                <div
+                    style="position: relative; overflow: hidden"
+                    class="file-upload-wrapper"
+                >
+                    <input
+                        type="file"
+                        id="imagenes"
+                        (change)="onFileChange($event)"
+                        formControlName="imagenes"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            cursor: pointer;
+                        "
+                        class="file-upload-input"
+                    />
+                    <span
+                        style="
+                            display: inline-block;
+                            padding: 8px 16px;
+                            background-color: #e48900;
+                            color: #fff;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        "
+                        class="file-upload-button"
+                        >Seleccionar</span
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <div class="col-12 md:col-6">
+		<div><br></div>
+		<div><br></div>
+		<div class="col-12 md:col-6">
+			<div *ngIf="imagePreview" class="image-preview" style="width: 740px; height: 570px; overflow: hidden; border: 10px solid #e48900; border-image: linear-gradient(45deg, #c55d07, #ffb067); border-image-slice: 1; border-radius: 10px;">
+			  <img [src]="imagePreview" alt="Image Preview" style="width: auto; height: 100%; object-fit: cover; border-radius: 10px;">
 			</div>
-		</div>
-	</div>
-</div>
+		  </div>
+    </div>
+
+    <button
+        type="submit"
+        style="
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 20px;
+        "
+    >
+        Enviar
+    </button>
+</form>
