@@ -45,10 +45,11 @@
 
             <div class="field">
                 <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                <!-- Cambiado el tipo de input a "date" para seleccionar fechas -->
                 <input
                     pInputText
                     id="fechaVencimiento"
-                    type="text"
+                    type="date"
                     formControlName="fechaVencimiento"
                 />
             </div>
@@ -78,6 +79,7 @@
                     style="position: relative; overflow: hidden"
                     class="file-upload-wrapper"
                 >
+                    <!-- Cambiado el tipo de input a "file" -->
                     <input
                         type="file"
                         id="imagenes"
@@ -112,17 +114,39 @@
             </div>
         </div>
     </div>
-	
+
     <div class="col-12 md:col-6">
-		<div><br></div>
-		<div><br></div>
-		<div class="col-12 md:col-6">
-			<div *ngIf="imagePreview" class="image-preview" style="width: 740px; height: 570px; overflow: hidden; border: 10px solid #e48900; border-image: linear-gradient(45deg, #c55d07, #ffb067); border-image-slice: 1; border-radius: 10px;">
-			  <img [src]="imagePreview" alt="Image Preview" style="width: auto; height: 100%; object-fit: cover; border-radius: 10px;">
-			</div>
-		  </div>
+        <div><br /></div>
+        <div><br /></div>
+        <div class="col-12 md:col-6">
+            <div
+                *ngIf="imagePreview"
+                class="image-preview"
+                style="
+                    width: 740px;
+                    height: 570px;
+                    overflow: hidden;
+                    border: 10px solid #e48900;
+                    border-image: linear-gradient(45deg, #c55d07, #ffb067);
+                    border-image-slice: 1;
+                    border-radius: 10px;
+                "
+            >
+                <img
+                    [src]="imagePreview"
+                    alt="Image Preview"
+                    style="
+                        width: auto;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    "
+                />
+            </div>
+        </div>
     </div>
 
+    <!-- Mover el botón dentro del formulario -->
     <button
         type="submit"
         style="

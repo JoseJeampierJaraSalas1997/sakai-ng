@@ -1,90 +1,127 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
-  templateUrl: './formlayoutdemo.component.html'
+    templateUrl: './formlayoutdemo.component.html',
 })
 export class FormLayoutDemoComponent implements OnInit {
-  productForm: FormGroup;
-  imagePreview: string | ArrayBuffer;
+    private apiUrl = environment.apiUrl;
+    productForm: FormGroup;
+    imagePreview: string | ArrayBuffer;
 
-  // URL de la imagen predeterminada
-  defaultImageURL = 'https://i.blogs.es/9ea134/alimentos-saludables/1366_2000.jpg';
+    defaultImageURL =
+        'https://i.blogs.es/9ea134/alimentos-saludables/1366_2000.jpg';
 
-  constructor(private fb: FormBuilder) {
-    this.productForm = this.fb.group({
-      nombre: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      precio: [0, [Validators.required, Validators.min(0)]],
-      stock: [0, [Validators.required, Validators.min(0)]],
-      fechaVencimiento: ['', Validators.required],
-      registroSanitario: ['', Validators.required],
-      imagenes: this.fb.array([]),
-    });
-
-    // Inicializar la vista previa con la imagen predeterminada
-    this.imagePreview = this.defaultImageURL;
-  }
-
-  ngOnInit() {
-    // No necesitas volver a inicializar el productForm aquí, ya lo hiciste en el constructor.
-  }
-
-  onSubmit() {
-    console.log(this.productForm.value);
-  }
-
-  onFileChange(event: any) {
-    const files = event.target.files;
-    const imageArray = this.productForm.get('imagenes') as FormArray;
-
-    // Limpiar el FormArray antes de agregar nuevas imágenes
-    imageArray.clear();
-
-    // Limpiar la vista previa de la imagen
-    this.imagePreview = null;
-
-    // Iterar sobre los archivos y agregarlos al FormArray
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        // Crear un nuevo FormGroup para cada imagen
-        const imageFormGroup = this.fb.group({
-          file: reader.result,
-          name: file.name,
-          type: file.type,
-          size: file.size
+    constructor(private fb: FormBuilder, private http: HttpClient) {
+        this.productForm = this.fb.group({
+            nombre: ['', Validators.required],
+            descripcion: ['', Validators.required],
+            precio: [0, [Validators.required, Validators.min(0)]],
+            stock: [0, [Validators.required, Validators.min(0)]],
+            fechaVencimiento: ['', Validators.required],
+            registroSanitario: ['', Validators.required],
+            imagenes: this.fb.array([]),
         });
 
-        // Agregar el FormGroup al FormArray
-        imageArray.push(imageFormGroup);
-      };
-
-      // Leer la imagen como URL
-      reader.readAsDataURL(file);
+        this.imagePreview = this.defaultImageURL;
     }
 
-    // Mostrar la vista previa de la primera imagen (si hay alguna)
-    this.showImagePreview(event);
-  }
+    ngOnInit() {}
 
-  // Método para mostrar la vista previa de la imagen seleccionada
-  showImagePreview(event: any) {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    const reader = new FileReader();
+    onSubmit() {
+        if (this.productForm.dirty && this.productForm.valid) {
+            const formData = new FormData();
 
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-      console.log(this.imagePreview); // Agrega este log para verificar la URL de la imagen
-    };
+            // Agregar datos del formulario al FormData
+            formData.append('nombre', this.productForm.value.nombre);
+            formData.append('descripcion', this.productForm.value.descripcion);
+            formData.append('precio', this.productForm.value.precio);
+            formData.append('stock', this.productForm.value.stock);
+            formData.append(
+                'fechaVencimiento',
+                this.productForm.value.fechaVencimiento
+            );
+            formData.append(
+                'registroSanitario',
+                this.productForm.value.registroSanitario
+            );
 
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      // Si no se selecciona ninguna imagen, mostrar la imagen predeterminada
-      this.imagePreview = this.defaultImageURL;
+            // Agregar archivos de imágenes al FormData
+            const imagenes = this.productForm.value.imagenes;
+            for (let i = 0; i < imagenes.length; i++) {
+                formData.append('imagenes', imagenes[i].file);
+            }
+
+            // Configuración de encabezados (opcional)
+            const headers = new HttpHeaders({
+                'Content-Type': 'multipart/form-data',
+                Accept: 'application/json',
+            });
+
+            // Enviar FormData al backend
+            this.http.post(`${this.apiUrl}saveProduct`, formData).subscribe(
+                (response: any) => {
+                    Swal.fire({
+                        title: 'Producto Registrado',
+                        text: `Producto: ${response.producto.nombre} registrado con éxito`,
+                        icon: 'success',
+                    }).then(() => {
+                        this.productForm.reset();
+                        this.imagePreview = this.defaultImageURL;
+                    });
+                },
+                (error) => {
+                    console.error('Error al enviar los datos:', error);
+                }
+            );
+        } else {
+            Swal.fire({
+                title: 'Formulario Vacío',
+                text: 'Por favor, complete todos los campos del formulario.',
+                icon: 'warning',
+            });
+        }
     }
-  }
+
+    onFileChange(event: any): void {
+        const files = event.target.files;
+        const imageArray = this.productForm.get('imagenes') as FormArray;
+
+        imageArray.clear();
+
+        this.imagePreview = null;
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+
+            const imageFormGroup = this.fb.group({
+                file: file,
+                name: file.name,
+                type: file.type,
+                size: file.size,
+            });
+
+            imageArray.push(imageFormGroup);
+        }
+
+        this.showImagePreview(event);
+    }
+
+    showImagePreview(event: any): void {
+        const file = (event.target as HTMLInputElement).files?.[0];
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            this.imagePreview = reader.result as string;
+            console.log('Imagen cargada:', this.imagePreview);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.imagePreview = this.defaultImageURL;
+        }
+    }
 }
