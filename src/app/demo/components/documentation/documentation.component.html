@@ -37,6 +37,27 @@
             </ng-template>
         </p-table>
     </div>
+    <div>
+        <button
+            type="submit"
+            class="p-button p-primary p-col-12"
+            style="
+                margin-top: 20px;
+                text-align: center;
+                font-size: 1.5rem;
+                color: rgb(255, 255, 255);
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: chocolate;
+                border-color: chocolate;
+            "
+            (click)="enviarDatosAlBackend()"
+            #realizarPedidoBtn
+        >
+            Realizar pedido
+        </button>
+    </div>
 </div>
 
 <div class="carousel-container">
@@ -55,7 +76,7 @@
         </ng-template>
     </p-carousel>
 </div>
-
+<!--
 <form class="grid" (submit)="enviarDatosAlBackend($event, form.value)">
     <div class="col-12">
         <div class="card p-fluid">
@@ -161,4 +182,4 @@
             </button>
         </div>
     </div>
-</form>
+</form>-->

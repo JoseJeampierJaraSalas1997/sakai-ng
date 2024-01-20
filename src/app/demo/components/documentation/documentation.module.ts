@@ -5,6 +5,7 @@ import { DocumentationComponent } from './documentation.component';
 import { TableModule } from 'primeng/table';
 import { CarouselModule } from 'primeng/carousel';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         DocumentationRoutingModule,
         TableModule,
         CarouselModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FontAwesomeModule
     ],
     declarations: [DocumentationComponent]
 })

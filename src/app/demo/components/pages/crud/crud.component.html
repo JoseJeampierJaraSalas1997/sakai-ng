@@ -1,8 +1,8 @@
 <div class="grid">
     <div class="col-12">
-        <div class="card px-6 py-6">
+        <div class="card ">
             <p-toast></p-toast>
-            <p-toolbar styleClass="mb-4">
+            <!-- <p-toolbar styleClass="mb-12">
                 <ng-template pTemplate="left">
                     <div class="my-2">
                         <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
@@ -14,7 +14,21 @@
                     <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Importar" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
                     <button pButton pRipple label="Exportar" icon="pi pi-upload" class="p-button-help" (click)="dt.exportCSV()"></button>
                 </ng-template>
-            </p-toolbar>
+            </p-toolbar>-->
+            <p-toolbar styleClass="mb-12">
+                <ng-template pTemplate="right">
+                  <button
+                    pButton
+                    pRipple
+                    label="Exportar"
+                    icon="pi pi-upload"
+                    class="p-button-help"
+                    style="width: 100%; background-color: #e07e00; border-color: #e07e00;"
+                    (click)="dt.exportCSV()"
+                  ></button>
+                </ng-template>
+              </p-toolbar>
+              
 
             <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name','country.name','representative.name','status']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros" [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
                 <ng-template pTemplate="caption">

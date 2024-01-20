@@ -33,8 +33,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.productService.getProductsSmall().then(data => this.products = data);
 
         this.items = [
-            { label: 'Add New', icon: 'pi pi-fw pi-plus' },
-            { label: 'Remove', icon: 'pi pi-fw pi-minus' }
+            { label: '', icon: 'pi pi-fw pi-plus' },
+            { label: '', icon: 'pi pi-fw pi-minus' }
         ];
     }
 
@@ -45,19 +45,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
         this.chartData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'mayo', 'Junio', 'Julio'],
             datasets: [
                 {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: 'Proyectado',
+                    data: [1, 7, 10,16, 18, 20, 26],
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--bluegray-700'),
                     borderColor: documentStyle.getPropertyValue('--bluegray-700'),
                     tension: .4
                 },
                 {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
+                    label: 'Ventas realizadas por mes',
+                    data: [5, 10, 22, 15, 20, 30, 32],
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--green-600'),
                     borderColor: documentStyle.getPropertyValue('--green-600'),
