@@ -47,6 +47,8 @@ export class LayoutService {
 
     private overlayOpen = new Subject<any>();
 
+    private configSubject = new Subject<AppConfig>();
+
     configUpdate$ = this.configUpdate.asObservable();
 
     overlayOpen$ = this.overlayOpen.asObservable();
@@ -156,4 +158,10 @@ export class LayoutService {
     changeScale(value: number) {
         document.documentElement.style.fontSize = `${value}px`;
     }
+
+    setConfig(value: AppConfig) {
+        this._config = { ...value };
+        this.configSubject.next(this._config);
+      }
+
 }

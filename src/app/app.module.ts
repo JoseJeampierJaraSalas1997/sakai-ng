@@ -12,6 +12,8 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DocumentationModule } from '../../src/app/demo/components/documentation/documentation.module';
+
 
 @NgModule({
     declarations: [
@@ -20,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     imports: [
         AppRoutingModule,
         AppLayoutModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DocumentationModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

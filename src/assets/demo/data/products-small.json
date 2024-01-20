@@ -9,7 +9,7 @@
 			"price": 65,
 			"category": "Accessories",
 			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 5
 		},
 		{
@@ -21,7 +21,7 @@
 			"price": 72,
 			"category": "Accessories",
 			"quantity": 61,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 4
 		},
 		{
@@ -33,7 +33,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
 			"rating": 3
 		},
 		{
@@ -45,7 +45,7 @@
 			"price": 29,
 			"category": "Clothing",
 			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 5
 		},
 		{
@@ -57,7 +57,7 @@
 			"price": 15,
 			"category": "Accessories",
 			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 4
 		},
 		{
@@ -69,7 +69,7 @@
 			"price": 120,
 			"category": "Accessories",
 			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "SINSTOCK",
 			"rating": 4
 		},
 		{
@@ -81,7 +81,7 @@
 			"price": 32,
 			"category": "Accessories",
 			"quantity": 5,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
 			"rating": 3
 		},
 		{
@@ -93,7 +93,7 @@
 			"price": 34,
 			"category": "Accessories",
 			"quantity": 23,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 5
 		},
 		{
@@ -105,7 +105,7 @@
 			"price": 99,
 			"category": "Electronics",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
 			"rating": 4
 		},
 		{
@@ -117,7 +117,7 @@
 			"price": 299,
 			"category": "Electronics",
 			"quantity": 63,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
 			"rating": 3
 		}
 	]

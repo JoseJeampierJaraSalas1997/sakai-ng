@@ -9,7 +9,7 @@
 			"price": 65,
 			"category": "Accessories",
 			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -59,7 +59,7 @@
 			"price": 72,
 			"category": "Accessories",
 			"quantity": 61,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -91,7 +91,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -123,7 +123,7 @@
 			"price": 29,
 			"category": "Clothing",
 			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": []
 		},
@@ -136,7 +136,7 @@
 			"price": 15,
 			"category": "Accessories",
 			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -168,7 +168,7 @@
 			"price": 120,
 			"category": "Accessories",
 			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "SINSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -209,7 +209,7 @@
 			"price": 32,
 			"category": "Accessories",
 			"quantity": 5,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -241,7 +241,7 @@
 			"price": 34,
 			"category": "Accessories",
 			"quantity": 23,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -264,7 +264,7 @@
 			"price": 99,
 			"category": "Electronics",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -296,7 +296,7 @@
 			"price": 299,
 			"category": "Electronics",
 			"quantity": 63,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -346,7 +346,7 @@
 			"price": 24,
 			"category": "Accessories",
 			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "SINSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -378,7 +378,7 @@
 			"price": 89,
 			"category": "Electronics",
 			"quantity": 23,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -401,7 +401,7 @@
 			"price": 49,
 			"category": "Clothing",
 			"quantity": 74,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -433,7 +433,7 @@
 			"price": 48,
 			"category": "Clothing",
 			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "SINSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -456,7 +456,7 @@
 			"price": 175,
 			"category": "Electronics",
 			"quantity": 8,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -488,7 +488,7 @@
 			"price": 49,
 			"category": "Clothing",
 			"quantity": 34,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -511,7 +511,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 12,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 3,
             "orders": []
 		},
@@ -524,7 +524,7 @@
 			"price": 85,
 			"category": "Clothing",
 			"quantity": 42,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -547,7 +547,7 @@
 			"price": 56,
 			"category": "Accessories",
 			"quantity": 41,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -579,7 +579,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 63,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": []
 		},
@@ -592,7 +592,7 @@
 			"price": 110,
 			"category": "Accessories",
 			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "SINSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -624,7 +624,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 6,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -647,7 +647,7 @@
 			"price": 45,
 			"category": "Accessories",
 			"quantity": 62,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -679,7 +679,7 @@
 			"price": 49,
 			"category": "Clothing",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 5,
             "orders": [
                 {
@@ -702,7 +702,7 @@
 			"price": 64,
 			"category": "Clothing",
 			"quantity": 0,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": []
 		},
@@ -715,7 +715,7 @@
 			"price": 78,
 			"category": "Clothing",
 			"quantity": 52,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 4,
             "orders": [
                 {
@@ -747,7 +747,7 @@
 			"price": 49,
 			"category": "Clothing",
 			"quantity": 3,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "BAJOSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -770,7 +770,7 @@
 			"price": 89,
 			"category": "Electronics",
 			"quantity": 35,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 3,
             "orders": [
                 {
@@ -802,7 +802,7 @@
 			"price": 20,
 			"category": "Fitness",
 			"quantity": 15,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 5,
             "orders": []
 		},
@@ -815,7 +815,7 @@
 			"price": 20,
 			"category": "Fitness",
 			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "ENSTOCK",
             "rating": 8,
             "orders": [
                 {

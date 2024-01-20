@@ -10,17 +10,17 @@
 }
 
 .product-badge {
-    &.status-instock {
+    &.status-ENSTOCK {
         background: #C8E6C9;
         color: #256029;
     }
 
-    &.status-outofstock {
+    &.status-SINSTOCK {
         background: #FFCDD2;
         color: #C63737;
     }
 
-    &.status-lowstock {
+    &.status-BAJOSTOCK {
         background: #FEEDAF;
         color: #8A5340;
     }

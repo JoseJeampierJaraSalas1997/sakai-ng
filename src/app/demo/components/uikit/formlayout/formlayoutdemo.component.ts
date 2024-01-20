@@ -24,6 +24,7 @@ export class FormLayoutDemoComponent implements OnInit {
             fechaVencimiento: ['', Validators.required],
             registroSanitario: ['', Validators.required],
             imagenes: this.fb.array([]),
+            categoria: ['', Validators.required],
         });
 
         this.imagePreview = this.defaultImageURL;
@@ -35,7 +36,6 @@ export class FormLayoutDemoComponent implements OnInit {
         if (this.productForm.dirty && this.productForm.valid) {
             const formData = new FormData();
 
-            // Agregar datos del formulario al FormData
             formData.append('nombre', this.productForm.value.nombre);
             formData.append('descripcion', this.productForm.value.descripcion);
             formData.append('precio', this.productForm.value.precio);
@@ -49,21 +49,30 @@ export class FormLayoutDemoComponent implements OnInit {
                 this.productForm.value.registroSanitario
             );
 
-            // Agregar archivos de imágenes al FormData
             const imagenes = this.productForm.value.imagenes;
             for (let i = 0; i < imagenes.length; i++) {
                 formData.append('imagenes', imagenes[i].file);
             }
-
+            formData.append('categorias',this.productForm.value.categoria);
             // Configuración de encabezados (opcional)
             const headers = new HttpHeaders({
                 'Content-Type': 'multipart/form-data',
                 Accept: 'application/json',
             });
 
+            // Convertir FormData a un objeto simple para imprimirlo en la consola
+            const formDataObject: { [key: string]: any } = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+
+            console.log('Datos enviados al backend:', formDataObject);
+
             // Enviar FormData al backend
             this.http.post(`${this.apiUrl}saveProduct`, formData).subscribe(
                 (response: any) => {
+                    console.log(response);
+
                     Swal.fire({
                         title: 'Producto Registrado',
                         text: `Producto: ${response.producto.nombre} registrado con éxito`,

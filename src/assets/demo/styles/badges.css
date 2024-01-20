@@ -9,15 +9,15 @@
   letter-spacing: 0.3px;
 }
 
-.product-badge.status-instock {
+.product-badge.status-ENSTOCK {
   background: #C8E6C9;
   color: #256029;
 }
-.product-badge.status-outofstock {
+.product-badge.status-SINSTOCK {
   background: #FFCDD2;
   color: #C63737;
 }
-.product-badge.status-lowstock {
+.product-badge.status-BAJOSTOCK {
   background: #FEEDAF;
   color: #8A5340;
 }

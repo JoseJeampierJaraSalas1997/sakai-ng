@@ -23,6 +23,35 @@
                 />
             </div>
 
+
+            <div class="field">
+                <label for="categoria">Categoría</label>
+                <select pInputText id="categoria" formControlName="categoria">
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="1">Café</option>
+                    <option value="2">Té</option>
+                    <option value="3">Bebidas Frías</option>
+                    <option value="4">Bocadillos</option>
+                    <option value="5">Postres</option>
+                    <option value="6">Desayuno</option>
+                    <option value="7">Sandwiches</option>
+                    <option value="8">Ensaladas</option>
+                    <option value="9">Smoothies</option>
+                    <option value="10">Snacks</option>
+                    <option value="11">Panadería</option>
+                    <option value="12">Sopas</option>
+                    <option value="13">Bebidas Calientes</option>
+                    <option value="14">Zumos Naturales</option>
+                    <option value="15">Especialidades del Chef</option>
+                    <option value="16">Helados</option>
+                    <option value="17">Comida Saludable</option>
+                    <option value="18">Almuerzos Rápidos</option>
+                    <option value="19">Batidos</option>
+                    <option value="20">Especialidades de Temporada</option>
+                </select>
+            </div>
+
+            
             <div class="field">
                 <label for="precio">Precio</label>
                 <input
@@ -45,7 +74,6 @@
 
             <div class="field">
                 <label for="fechaVencimiento">Fecha de Vencimiento</label>
-                <!-- Cambiado el tipo de input a "date" para seleccionar fechas -->
                 <input
                     pInputText
                     id="fechaVencimiento"
@@ -62,7 +90,7 @@
                     type="text"
                     formControlName="registroSanitario"
                 />
-            </div>
+            </div>   
 
             <div class="field" style="margin-bottom: 20px">
                 <label

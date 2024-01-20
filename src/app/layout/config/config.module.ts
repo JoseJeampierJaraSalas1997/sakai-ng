@@ -14,7 +14,7 @@ import { AppConfigComponent } from './app.config.component';
         SidebarModule,
         RadioButtonModule,
         ButtonModule,
-        InputSwitchModule
+        InputSwitchModule,
     ],
     declarations: [
         AppConfigComponent
